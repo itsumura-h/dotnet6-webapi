@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace src.api.Controllers;
+namespace src.Controllers;
 
 [Route("api/test-users/")]
 public class TestUsers: ControllerBase{
@@ -35,5 +35,11 @@ public class TestUsers: ControllerBase{
     Console.WriteLine(id);
     Console.WriteLine(request.email);
     return new StatusCodeResult(200);
+  }
+
+  [HttpGet("search/")]
+  public string Search(string email){
+    Console.WriteLine(email);
+    return email;
   }
 }
